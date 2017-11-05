@@ -1,0 +1,18 @@
+远程桌面使用指示：
+	0.使用hint命令查看此帮助
+	1.使用pee命令来初始化配置文件
+	2.调用pee之后，私人vnc服务器即已开启
+	3.使用getuid命令查看自己的id号码
+	4.使用vncserver -list 命令查看自己是否开启远程桌面，-kill :x 关闭x号vnc
+	5.使用sudo systemctl start|stop|status|restart vncserver@:id.service
+		来控制自己的远程桌面
+	6.维护重启后，个人远程桌面默认关闭，节约cpu
+	7.vnc访问地址为10.214.164.248:your_short_id
+	8.vnc访问不上的，用vncserver -list命令看看自己到底是几号端口
+工具使用提示：
+	1.htop查看系统资源
+	2.nvidia-smi查看GPU负荷
+	3.who查看已登录用户
+	4.VNC桌面下，在命令行中时，可用openf命令图形化打开文件夹或文件，自动判断。
+重要信息：
+	开放管理，始于信任，权限越大，责任越大，滥用sudo，全盘皆黑。

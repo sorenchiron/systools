@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ $# -ge 1 ]
+then
+	echo 'Territory Marking Tools By Chen Si Yu. Copyright 2017-2018'
+	echo 'Use this program to mark your territoy'
+	exit
+fi
+
+/usr/local/vncserver/pee.sh >&1
+

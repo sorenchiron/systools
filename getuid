@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ $# -lt 1 ]; then
+	#echo 'Usage: getuid username'
+	#exit 0
+	username=`whoami`
+else
+	username=$1
+fi
+userfullid=`cat /etc/passwd | grep $username | awk -F ':' '{print $3}'`
+userid=$(echo $userfullid | awk -F '0' '{print $NF}' )
+echo "your userid in full:$userfullid"
+echo "your short id is:$userid"
+#echo "your userid is:$(cat /etc/passwd | grep $username | awk -F ':' '{print $3}' | awk -F '0' '{print $NF}')"

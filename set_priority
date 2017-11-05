@@ -1,0 +1,22 @@
+#!/bin/bash
+# used to lower matlab processes priorities
+# value range from -20 ~ 19
+# bigger value means lower priority
+echo usage::set_priority 10 matlab
+if [ ! $1 ]
+then
+	prival=10
+else
+	prival=$1
+fi
+
+if [ ! $2 ]
+then 
+	pname='matlab -dml'
+else
+	pname=$2
+fi
+
+#sudo ps -aux | grep -i matlab | awk '{ print $2}' | xargs  sudo renice ${prival}
+#ps -eLF -Aelw | grep -i 'matlab -prefer' | awk '{ print $6 }'
+sudo ps -eLF -Aelw | grep -i "$pname" | awk '{print $6}' | xargs sudo renice ${prival}

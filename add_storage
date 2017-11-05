@@ -1,0 +1,26 @@
+#!/bin/bash
+# by chensiyu
+if [ -L ~/storage ]
+then
+	echo unlinking storage
+	unlink ~/storage
+fi
+if [ -d ~/storage ]
+then
+	echo you already have a directory named storage.
+	echo exiting without any operation.
+	exit
+fi
+if [ ! -e /home/storage/$(whoami) ]
+then
+	echo creating private storage subdir
+	mkdir /home/storage/$(whoami)
+fi
+echo changing ownership of your directory to private level.
+sudo chown -R $(whoami) /home/storage/$(whoami)
+echo preventing others from entering your private storage.
+chmod -R 750 /home/storage/$(whoami)
+echo perparing your private storage.
+ln -s /home/storage/$(whoami) /home/$(whoami)/storage
+echo done, please don not contact anybody for help. @CILAB
+
