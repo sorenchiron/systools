@@ -1,0 +1,19 @@
+#!/bin/sh
+if [ -d ~/.vnc ]
+then
+rm -rf ~/.vnc
+fi
+if [ -f ~/.Xresources ]
+then
+rm ~/.Xresources
+fi
+if [ -f ~/.Xauthority ]
+then
+rm ~/.Xauthority
+fi
+if [ -d ~/.kde ]
+then
+rm -rf ~/.kde
+fi
+
+echo 'pee flushed! remember to wash your hands.'

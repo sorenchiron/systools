@@ -1,0 +1,14 @@
+#!/bin/bash
+textedt=kwrite
+target_name=.
+if [ -n $1 ]
+then
+	target_name=$1
+fi
+
+if [ -d $target_name ]
+then 	
+	dolphin "$target_name"
+else
+	$textedt "$target_name"
+fi

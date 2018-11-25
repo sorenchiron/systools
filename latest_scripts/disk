@@ -1,0 +1,15 @@
+#!/bin/bash
+if [[ $1 == -h || $1 == -help || $1 == help ]]
+then
+	echo 'usage disk [path | -h -help help]' $1
+	exit
+fi
+
+p=$1
+
+if [[ ! -n $1 ]]
+then
+	du -sh *
+else
+	du -sh $p
+fi

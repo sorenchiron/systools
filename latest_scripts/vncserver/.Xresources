@@ -1,0 +1,21 @@
+Xft.dpi:96 
+xpdf.title: PDF 
+XTerm*locale: true 
+XTerm*utf8Title: true 
+XTerm*fontMenu*fontdefault*Label: Default 
+XTerm*faceName: Lucida Console 
+XTerm*faceNameDoublesize: LiHei Pro 
+XTerm*faceSize: 10 
+XTerm*faceSize1: 10 
+XTerm*faceSize2: 10 
+XTerm*faceSize3: 10 
+XTerm*faceSize4: 10 
+XTerm*faceSize5: 10 
+XTerm*faceSize6: 10 
+XTerm.cjkWidth:true 
+XTerm*background: #1c5572 
+XTerm*foreground: white 
+XTerm*scrollBar: true 
+XTerm*rightScrollBar: true 
+XTerm*jumpScroll:  true 
+XTerm*SaveLines:  1000

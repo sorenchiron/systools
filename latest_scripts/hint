@@ -1,0 +1,3 @@
+#!/bin/bash
+echo 'hint command by chensiyu, 2017'
+cat /etc/motd

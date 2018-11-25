@@ -1,0 +1,21 @@
+#!/bin/bash
+tmpfname="/tmp/proc_$(whoami)"
+touch $tmpfname
+echo -n ''>$tmpfname
+echo temporary file created $tmpfname
+usernumber=$(cat /etc/passwd | wc -l)
+current_user=0
+cat /etc/passwd | while read line
+do
+	current_user=$[current_user+1]
+	user=$(echo "$line" | awk -F ':' '{print $1}')
+	printf "\rprocessing %15s %d|%d            " $user $current_user $usernumber
+	#echo -en "\rprocessing:$user  $current_user|$usernumber                   "
+	number=$(ps -aux | grep "$user" | wc -l)
+	echo `printf "%s %d" $user $number` >>$tmpfname
+done
+
+sort -n -t ' ' -k 2 -r $tmpfname | less
+rm $tmpfname
+echo -e "\ndone tmp file $tmpfname deleted"
+
