@@ -1,4 +1,5 @@
 #!/bin/bash
+
 tmpfname="/tmp/proc_$(whoami)"
 touch $tmpfname
 echo -n ''>$tmpfname

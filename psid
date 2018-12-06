@@ -1,0 +1,8 @@
+#!/bin/bash
+if ["$1"=='' -o "$1"=='-h']
+then
+	echo 'usage: psid 12345 or psid -h'
+	echo "your argument is:$1"
+else
+	ps -aux | grep $*
+fi
